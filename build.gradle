@@ -21,6 +21,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// バリデーションの追加
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper モデルマッパー
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
+	
+	// https://mvnrepository.com/artifact/com.h2database/h2
+	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
