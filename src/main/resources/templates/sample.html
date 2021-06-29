@@ -10,5 +10,90 @@
     <h1>Hello Sample!!!</h1>
     <p>test</p>
     <p th:text="#{UnexpectedError}"></p>
+    <hr />
+    <form action="#" method="post" th:action="@{/sample/user}" th:object="${userForm}">
+    	<label for="passowrd">パスワード</label>
+    	<input type="password" id="password" th:field="*{password}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('password')}"th:errors="*{password}"></div>
+    	
+    	<label for="passowrdConfirm">パスワード(チェック用)</label>
+    	<input type="password" id="passwordConfirm" th:field="*{passwordConfirm}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('passwordConfirm')}"th:errors="*{passwordConfirm}"></div>
+    	
+    	<label for="lastName">姓</label>
+    	<input type="text" id="lastName" th:field="*{lastName}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('lastName')}"th:errors="*{lastName}"></div>
+    	
+    	<label for="firstName">名</label>
+    	<input type="text" id="firstName" th:field="*{firstName}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('firstName')}"th:errors="*{firstName}"></div>
+    	
+    	<label for="email">メールアドレス</label>
+    	<input type="text" id="email" th:field="*{email}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('email')}"th:errors="*{email}"></div>
+    	
+    	<label for="tel">電話番号</label>
+    	<input type="text" id="tel" th:field="*{tel}" />
+    	<br />
+    	<div th:if="${#fields.hasErrors('tel')}"th:errors="*{tel}"></div>
+    	
+    	<label for="zip">郵便番号</label>
+    	<input type="text" id="zip" th:field="*{zip}" />
+    	<br />
+    	
+    	<label for="address">住所</label>
+    	<input type="text" id="address" th:field="*{address}" />
+    	<br />
+    	
+    	<button type="submit">送信</button>
+    </form>
+    
+    <hr />
+    	<form action="#" th:action="@{/sample/download/customers.pdf}" method="get">
+    		<button type="submit">PDF取得</button>
+    	</form>
+    	<form action="#" th:action="@{/sample/download/customers.csv}" method="get">
+    		<button type="submit">CSV取得</button>
+    	</form>
+    	<form action="#" th:action="@{/sample/download/customers.xlsx}" method="get">
+    		<button type="submit">Excel取得</button>
+    	</form>
+    	<form action="#" th:action="@{/sample/sendmail1}" method="get">
+    		<button type="submit">メール送信1</button>
+    	</form>
+    	<form action="#" th:action="@{/sample/sendmail2}" method="get">
+    		<button type="submit">メール送信2</button>
+    	</form>
+    <hr />
+    <h2>All Customers</h2>
+    <table>
+    	<tbody>
+    		<tr>
+    			<th>ID</th>
+    			<th>Password</th>
+    			<th>LastName</th>
+    			<th>FirstName</th>
+    			<th>Email</th>
+    			<th>Tel</th>
+    			<th>Zip</th>
+    			<th>Address</th>
+    		</tr>
+    		<tr th:each="customer : ${customers}">
+    			<td th:text="${customer.id}"></td>
+    			<td th:text="${customer.password}"></td>
+    			<td th:text="${customer.lastName}"></td>
+    			<td th:text="${customer.firstName}"></td>
+    			<td th:text="${customer.email}"></td>
+    			<td th:text="${customer.tel}"></td>
+    			<td th:text="${customer.zip}"></td>
+    			<td th:text="${customer.address}"></td>
+    		</tr>
+    	</tbody>
+    </table>
 </body>
 </html>

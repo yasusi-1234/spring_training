@@ -1,5 +1,5 @@
 CREATE TABLE if not exists customer(
-	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id BIGINT auto_increment,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -7,5 +7,6 @@ CREATE TABLE if not exists customer(
     tel VARCHAR(32),
     zip VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
-	upload_file_id BIGINT
+	upload_file_id BIGINT,
+	primary key(id)
 );

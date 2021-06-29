@@ -1,5 +1,32 @@
 spring:
+  # Message関連の設定
   messages:
-    basename: messages,ValidationMessages,PropertyNames
+    basename: messages
     cache-duration: -1
     encoding: UTF-8
+  # SQL関連の設定
+  sql:    init:      mode: always
+      encoding: UTF-8
+      schema-locations: classpath:schema.sql
+  # JPA関連の設定
+  jpa:
+    show-sql: true
+    hibernate:      ddl-auto: create-drop
+  # メール設定
+  mail:
+    host: smtp.gmail.com #gmail
+    port: 587 #port
+    username: #送り元メールアドレスの設定
+    password: #Googleパスワード
+    properties:      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# ログ関連の設定
+logging:
+  level:
+    '[org.springframework]': info
+    '[org.springframework.jdbc]': info
+    #'[org.thymeleaf]': debug

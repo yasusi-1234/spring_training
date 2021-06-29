@@ -4,9 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@Getter
+@Setter
+@ToString
 public class Customer {
 
 	@Id
@@ -20,9 +26,6 @@ public class Customer {
 	String lastName;
 
 	String password;
-
-	@NotEmpty
-	String passwordConfirm;
 
 	// メールアドレス
 	String email;

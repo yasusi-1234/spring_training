@@ -25,11 +25,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper モデルマッパー
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
-	
 	// https://mvnrepository.com/artifact/com.h2database/h2
 	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
-	
+	// jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
+	implementation group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.17.0'
+	// csv
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv'
+	// excel
+	implementation 'org.apache.poi:poi:3.16'
+	implementation 'org.apache.poi:poi-ooxml:3.16'
+	// メール
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
